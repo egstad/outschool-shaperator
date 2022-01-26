@@ -1,5 +1,6 @@
 export const state = () => ({
   shapeFill: 'var(--color-black)',
+  shapePoints: 5,
 })
 
 export const mutations = {
@@ -9,6 +10,10 @@ export const mutations = {
     )
 
     state.shapeFill = hex
-    console.log(state.shapeFill, color)
+  },
+  updateShapePoints(state, num) {
+    state.shapePoints = num
+
+    window.$nuxt.$emit('shape/update')
   },
 }

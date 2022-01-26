@@ -4,7 +4,14 @@
       <div class="controls__complexity sp-bottom">
         <p class="sans label">Complexity</p>
 
-        <Range />
+        <Range
+          min="4"
+          max="8"
+          :value="$store.state.shapePoints"
+          @input.native="
+            $store.commit('updateShapePoints', $event.target.value)
+          "
+        />
       </div>
 
       <div class="controls__color sp-bottom">

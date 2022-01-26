@@ -1,5 +1,5 @@
 <template>
-  <input type="range" min="4" max="9" value="50" class="slider" />
+  <input type="range" class="slider" />
 </template>
 
 <style scoped>

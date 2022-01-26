@@ -14,7 +14,6 @@ export default {
       shape: null,
       shapeVals: null,
       shapeRadius: null,
-      shapePoints: 5,
       gui: null,
       center: null,
       segment: null,
@@ -24,6 +23,9 @@ export default {
   computed: {
     color() {
       return this.$store.state.shapeFill
+    },
+    shapePoints() {
+      return this.$store.state.shapePoints
     },
   },
   mounted() {
