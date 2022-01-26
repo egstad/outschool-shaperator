@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'abcd-ginto';
+  src: url('~assets/fonts/ginto/ABCGintoNormal-Medium.woff2') format('woff2'),
+    url('~assets/fonts/ginto/ABCGintoNormal-Medium.woff') format('woff');
+}
+
+.sans {
+  font-family: 'abcd-ginto';
+  font-style: normal;
+  font-display: swap;
+  font-size: 1.125em;
+  line-height: 1;
+}
