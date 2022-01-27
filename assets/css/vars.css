@@ -2,11 +2,11 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray: #808080;
-  --color-blue: #4d01e4;
-  --color-light-blue: #00aaff;
-  --color-pink: #fe7fc9;
-  --color-red: #ff5129;
-  --color-yellow: #ffc61a;
+  --color-blue: #4b01d4;
+  --color-light-blue: #19affa;
+  --color-pink: #ff80ca;
+  --color-red: #ff5c33;
+  --color-yellow: #ffc619;
 
   --background: var(--color-white);
   --foreground: var(--color-black);

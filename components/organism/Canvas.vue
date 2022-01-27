@@ -40,7 +40,7 @@ export default {
       paper.setup(this.$refs.canvas)
       this.app = paper.view
       window.paper.settings.hitTolerance = 24
-      window.paper.settings.handleSize = 8
+      window.paper.settings.handleSize = 12
 
       this.setShapeRadius()
       this.drawShape()
@@ -91,8 +91,10 @@ export default {
 
         if (this.hitResult) {
           this.shape.selected = true
+          document.body.style.cursor = 'pointer'
         } else {
           this.shape.selected = false
+          document.body.style.cursor = 'default'
         }
       }
     },
