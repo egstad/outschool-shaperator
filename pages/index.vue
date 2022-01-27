@@ -1,5 +1,5 @@
 <template>
-  <main class="app">
+  <main :class="['app', { 'is-loaded': hasMounted }]">
     <Header ref="header" />
     <Canvas ref="canvas" />
     <Controls ref="controls" />
@@ -23,7 +23,11 @@ export default {
   data() {
     return {
       tl: gsap.timeline(),
+      hasMounted: false,
     }
+  },
+  mounted() {
+    this.hasMounted = true
   },
   beforeMount() {
     this.$nuxt.$on('index/animate', this.animatePage)
@@ -58,28 +62,13 @@ export default {
         {
           opacity: 1,
           y: 0,
-          delay: 0.5,
+          delay: 0.75,
           duration: 1,
           ease: 'power4.out',
           stagger: {
             from: 'top',
             amount: 0.35,
           },
-        },
-        '0'
-      )
-    },
-    animateHeader() {
-      this.tl.fromTo(
-        this.$refs.header.$el,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          delay: 0.5,
-          duration: 1,
-          ease: 'power2.out',
         },
         '0'
       )
@@ -97,6 +86,7 @@ export default {
           opacity: 1,
           scale: 1,
           duration: 2,
+          delay: 0.25,
           ease: 'power2.out',
           rotation: 0,
           y: 0,
@@ -124,6 +114,11 @@ export default {
   /* Text */
 
   /* Other */
+  visibility: hidden;
+}
+
+.app.is-loaded {
+  visibility: visible;
 }
 
 @media (min-width: 768px) {
