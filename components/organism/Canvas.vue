@@ -50,6 +50,8 @@ export default {
       this.onMouseMove()
       this.onMouseDrag()
       this.onKeyUp()
+
+      this.$nuxt.$emit('index/animate')
     },
     onFrame() {
       this.app.onFrame = (event) => {

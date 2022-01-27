@@ -62,17 +62,17 @@
     </div>
 
     <div class="color--bottom">
-      <Button class="light" @click.native="$nuxt.$emit('shape/update')">
+      <Button @click.native="$nuxt.$emit('shape/update')">
         <template #icon><IconRefresh /></template>
         <template #text>New Shape</template>
       </Button>
 
-      <Button class="light" @click.native="$nuxt.$emit('shape/copy')">
+      <Button type="secondary" @click.native="$nuxt.$emit('shape/copy')">
         <template #icon><IconCopy /></template>
         <template #text>Copy</template>
       </Button>
 
-      <Button class="light" @click.native="$nuxt.$emit('shape/download')">
+      <Button type="secondary" @click.native="$nuxt.$emit('shape/download')">
         <template #icon><IconDownload /></template>
         <template #text>SVG</template>
       </Button>

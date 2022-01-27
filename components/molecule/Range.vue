@@ -25,7 +25,7 @@
 }
 
 .slider:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px var(--background), 0 0 0 5px var(--color-blue);
+  box-shadow: 0 0 0 3px var(--background), 0 0 0 5px var(--foreground);
 }
 
 .slider::-moz-range-thumb {
