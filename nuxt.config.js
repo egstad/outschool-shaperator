@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'outschool-shape-tool',
+    title: 'Outschool • Shaperator',
     htmlAttrs: {
       lang: 'en',
     },
