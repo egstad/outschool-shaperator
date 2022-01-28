@@ -163,6 +163,23 @@ export default {
       link.click()
     },
     downloadPNG() {
+      const now = new window.Date().toISOString()
+      const fileName = `outschool-shape-${now}.png`
+      const url = paper.view.element.toDataURL('image/png')
+      const link = document.createElement('a')
+      link.download = fileName
+      link.href = url
+      link.click()
+    },
+    resetShape() {
+      window.project.clear()
+      this.drawShape()
+    },
+    copySVG() {
+      const url = paper.project.exportSVG({ asString: true })
+      navigator.clipboard.writeText(url)
+    },
+    copyPNG() {
       const canvas = paper.view.element
       let exportBlob = null
 
@@ -171,14 +188,6 @@ export default {
         exportBlob = new ClipboardItem({ 'image/png': blob })
         navigator.clipboard.write([exportBlob])
       })
-    },
-    resetShape() {
-      window.project.clear()
-      this.drawShape()
-    },
-    copy() {
-      const url = paper.project.exportSVG({ asString: true })
-      navigator.clipboard.writeText(url)
     },
   },
 }
