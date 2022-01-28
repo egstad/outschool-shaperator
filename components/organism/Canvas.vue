@@ -31,8 +31,8 @@ export default {
   mounted() {
     this.initPaperJS()
     this.$nuxt.$on('shape/update', this.resetShape)
-    this.$nuxt.$on('shape/download', this.download)
-    this.$nuxt.$on('shape/copy', this.copy)
+    this.$nuxt.$on('shape/downloadSVG', this.downloadSVG)
+    this.$nuxt.$on('shape/downloadPNG', this.downloadPNG)
   },
   methods: {
     initPaperJS() {
@@ -108,7 +108,7 @@ export default {
             break
 
           case 'enter':
-            this.download()
+            this.downloadSVG()
             break
 
           default:
@@ -147,7 +147,7 @@ export default {
 
       return path
     },
-    download() {
+    downloadSVG() {
       const now = new window.Date().toISOString()
       const fileName = `outschool-shape-${now}.svg`
       const url =
@@ -157,6 +157,16 @@ export default {
       link.download = fileName
       link.href = url
       link.click()
+    },
+    downloadPNG() {
+      const canvas = paper.view.element
+      let exportBlob = null
+
+      canvas.toBlob((blob) => {
+        /* eslint-disable  */
+        exportBlob = new ClipboardItem({ 'image/png': blob })
+        navigator.clipboard.write([exportBlob])
+      })
     },
     resetShape() {
       window.project.clear()

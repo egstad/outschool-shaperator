@@ -67,12 +67,12 @@
         <template #text>New Shape</template>
       </Button>
 
-      <Button type="secondary" @click.native="$nuxt.$emit('shape/copy')">
-        <template #icon><IconCopy /></template>
-        <template #text>Copy</template>
+      <Button type="secondary" @click.native="$nuxt.$emit('shape/downloadPNG')">
+        <template #icon><IconDownload /></template>
+        <template #text>PNG</template>
       </Button>
 
-      <Button type="secondary" @click.native="$nuxt.$emit('shape/download')">
+      <Button type="secondary" @click.native="$nuxt.$emit('shape/downloadSVG')">
         <template #icon><IconDownload /></template>
         <template #text>SVG</template>
       </Button>
@@ -85,7 +85,7 @@ import Range from '@/components/molecule/Range'
 import Button from '@/components/molecule/Button'
 import Radio from '@/components/molecule/Radio'
 import IconDownload from '@/components/atom/IconDownload.vue'
-import IconCopy from '@/components/atom/IconCopy.vue'
+// import IconCopy from '@/components/atom/IconCopy.vue'
 import IconRefresh from '@/components/atom/IconRefresh.vue'
 
 export default {
@@ -94,7 +94,7 @@ export default {
     Button,
     Radio,
     IconDownload,
-    IconCopy,
+    // IconCopy,
     IconRefresh,
   },
   methods: {

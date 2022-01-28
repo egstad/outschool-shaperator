@@ -73,12 +73,14 @@ svg {
 
 .button.--secondary:hover,
 .button.--secondary:focus-visible {
-  color: var(--color-blue-700);
+  background-color: var(--color-blue-700);
+  color: var(--background);
   border-color: var(--color-blue-700);
 }
 
 .button.--secondary:active {
-  color: var(--color-blue-900);
+  background-color: var(--color-blue-900);
+  color: var(--background);
   border-color: var(--color-blue-900);
 }
 </style>
