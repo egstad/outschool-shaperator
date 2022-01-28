@@ -111,6 +111,10 @@ export default {
             this.downloadSVG()
             break
 
+          case 'shift':
+            this.downloadPNG()
+            break
+
           default:
         }
       }
